@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      .success {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo">Hello World!</p>
+    <h2 id="demo1">Iam from Javascript</h2>
+
+    <input type="text" id="fname" />
+    <button onclick="validate()">Add</button>
+
+    <script>
+      //   document.getElementById("demo").innerHTML = "changed text";content
+      //   document.getElementById("demo1").setAttribute("class", "success"); Setted attribute
+      //   document.getElementById("demo").style.background = "Gray"; css styles
+      var header = document.createElement("h1");
+      header.innerHTML = "Welcome Leelavathi";
+      document.body.appendChild(header);
+
+      function validate() {
+        var value = document.getElementById("fname").value;
+
+        if (value == "") {
+          alert("Enter some value");
+        } else {
+          alert("Welcome to " + value);
+        }
+      }
+    </script>
+  </body>
+</html>

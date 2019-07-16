@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body id="myBody">
+    <button type="button" onclick="myFunction()">Set border</button>
+    <script>
+      var myDiv = document.createElement("div");
+      myDiv.innerHTML = "Created Div Element Dynamicaly";
+      var myDiv1 = document.createElement("div");
+      myDiv.appendChild(myDiv1);
+      var header = document.createElement("h1");
+      header.innerHTML = "Iam from h1";
+      myDiv1.appendChild(header);
+      myDiv1.style.color = "green";
+      document.body.appendChild(myDiv);
+      document.getElementById("myBody").style.color = "red";
+
+      function myFunction() {
+        document.getElementById("myBody").style.borderStyle = "solid";
+      }
+    </script>
+  </body>
+</html>

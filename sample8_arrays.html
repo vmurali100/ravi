@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // [] is represents An Array
+      var users = [];
+      users[0] = "Murali";
+      users[1] = "Sandeep";
+      users[2] = "Ravi";
+      users[3] = "Ibrahim";
+
+      var users2 = ["Murali", "Sandeep", "Ravi", "Ibrahim"];
+      console.log(users.length);
+      //   users.push("Ram");
+      // Push method will add a value to the End of the Array
+
+      //   users.unshift("Rak Murali");
+      // Unshift method will add a value to the Beginning of the Array
+
+      //   users.splice(2, 0, "Prabu");
+      //   Splice method will addd a value to the specified Index or position
+
+      //   users.pop();
+      //   pop method will remvoe the last Value from An Array
+
+      //   users.shift();
+      //   Shift method will remvoe the first value of an Array
+
+      //   users.splice(2);
+      //   splice method will remove the values in specified Index
+
+      //   users.sort();
+      //   users.reverse();
+      //   document.write(users[0] + "<br>");
+      //   document.write(users[1] + "<br>");
+      //   document.write(users[2] + "<br>");
+      //   document.write(users[3] + "<br>");
+      for (i = 0; i < users.length; i++) {
+        document.write(users[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>

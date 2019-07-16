@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Literal Way Of Creating An  Object
+
+      //{} Indicates an Object
+
+      var person = {};
+      person.fname = "Murali";
+      person["lname"] = "Krishna";
+
+      // Rules for Creating Objects are:
+      //         1. YOu can not use "=" inside Object
+      //         2. Each property sould end with ","
+      //         3. Property name and property Value should be separated by ":"
+
+      var person2 = {
+        fname: "Ram",
+        lname: "Kumar"
+      };
+
+      console.log(person);
+
+      //Javascript Class or Constuctor Function
+      function Myperson(fname, lname) {
+        this.fname = fname;
+        this.lname = lname;
+      }
+
+      var person5 = new Myperson("Ravi", "Kumar");
+
+      console.log(person5);
+    </script>
+  </body>
+</html>

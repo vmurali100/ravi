@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      .setAttribute {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="demo">Welcome to JavaScript</h2>
+    <h3 id="changeColor">Learning The JavaScript</h3>
+
+    <input type="text" id="fname" />
+    <button onclick="validate()">Click Me</button>
+    <script>
+      var changeText = (document.getElementById("demo").innerHTML =
+        "Iam from JavaScript");
+      document
+        .getElementById("changeColor")
+        .setAttribute("class", "setAttribute");
+      document.getElementById("demo").style.color = "blue";
+
+      function validate() {
+        var displayName = document.getElementById("fname").value;
+
+        if (displayName == "") {
+          alert("Enter some value");
+        } else {
+          alert("Welcome to " + displayName);
+        }
+      }
+
+      var header = document.createElement("h1");
+      header.innerHTML = "Iam Creating An Element";
+      document.body.appendChild(header);
+    </script>
+  </body>
+</html>

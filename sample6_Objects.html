@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var myName = "Murali krishna";
+      var person = {}; // Empty Object
+      person.fname = "Murali";
+      person.lname = "krishna";
+      person["email"] = "vmurali100@gmail.com";
+
+      var person2 = {
+        fname: "Ravi",
+        lname: "Kumar",
+        email: "ravi@gmail.com"
+      };
+
+      for (a in person2) {
+        document.write(a);
+      }
+      //   document.write("Person First Name :" + person.fname + "<br>");
+      //   document.write("Person Last Name : " + person.lname + "<br>");
+      //   document.write("Person Email : " + person.email + "<hr>");
+    </script>
+  </body>
+</html>
