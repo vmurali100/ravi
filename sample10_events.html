@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sayHello()">Click</button>
+    <h2
+      onmouseover="changeColor()"
+      id="myHeading"
+      onmouseout="changeColorBack()"
+      onclick="changeHeading()"
+    >
+      Hello World
+    </h2>
+    <input
+      type="text"
+      id="myInput"
+      onkeypress="changeInput()"
+      onkeyup="changeInputBack()"
+      onkeydown="changeInput()"
+    />
+    <br />
+    <select name="" id="mySelect" onchange="getSelectedValue()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <script>
+      function getSelectedValue() {
+        console.log(document.getElementById("mySelect").value);
+      }
+      function changeInputBack() {
+        document.getElementById("myInput").style.background = "red";
+      }
+      function changeInput() {
+        document.getElementById("myInput").style.background = "lightgrey";
+      }
+      function changeHeading() {
+        document.getElementById("myHeading").innerHTML = "Heading Changed";
+      }
+      function changeColorBack() {
+        document.getElementById("myHeading").style.color = "";
+      }
+      function changeColor() {
+        document.getElementById("myHeading").style.color = "red";
+      }
+      function sayHello() {
+        alert("Hello You Just Clicked On a button");
+      }
+    </script>
+  </body>
+</html>
