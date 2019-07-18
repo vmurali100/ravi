@@ -7,7 +7,7 @@
     <title>DOM</title>
   </head>
   <body>
-    <h1 id="myHeading">Hello I am H1 With ID</h1>
+    <h1 id="myHeading" class="helo" style="color:red">Hello I am H1 With ID</h1>
     <h2 name="myE">Hello World</h2>
     <h2 name="myE">Hello World</h2>
     <h2>Hello World</h2>
@@ -33,6 +33,10 @@
       //   function changeColor() {
       //     document.getElementById("myHeading").style.color = "red";
       //   }
+
+      document
+        .getElementById("myHeading")
+        .setAttribute("name", "myElementName");
     </script>
   </body>
 </html>

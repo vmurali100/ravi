@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <ul id="myUl"></ul>
+    <ul id="myId1"></ul>
+    <ul id="myId"></ul>
+    <!-- <input type="radio" text ="name" id="myRadio" ></input> -->
+    <form action ""  id="myRadio" > </form>
+    <select name="" id="mySelect"></select>
+    <select name="" id="mySelect1"> </select>
+    <script>
+      for (i = 0; i <= 25; i++) {
+        // var myLi = document.createElement("li");
+        // myLi.innerHTML = "Helo I am from Javascript " + i;
+        // document.getElementById("myUl").appendChild(myLi);
+
+        // var opt = document.createElement("option");
+        // opt.innerHTML = "I am from JS";
+        // document.getElementById("mySelect").appendChild(opt);
+
+        let opts = document.createElement("li");
+        opts.innerHTML = " I am done ";
+        document.getElementById("myId1").appendChild(opts);
+
+        let opt1 = document.createElement("option");
+        opt1.innerHTML = " I am done ";
+        document.getElementById("mySelect1").appendChild(opt1);
+
+         let opt2 = document.createElement("input");
+         opt2.setAttribute("type", "radio");
+         document.getElementById("myRadio").appendChild(opt2);
+      }
+
+      //Creating a HTML Element Through Javascript
+      //   var headingElement = document.createElement("h1");
+
+      //Adding some Content to the Element created by Javascript
+      //   headingElement.innerHTML = "Helo I am from Javascript ";
+
+      //   Adding the Element to body
+      //   document.body.appendChild(headingElement);
+    </script>
+  </body>
+</html>
