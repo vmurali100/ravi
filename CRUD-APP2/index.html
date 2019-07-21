@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <style>
+      h1 {
+        margin-left: 50px;
+      }
+      img {
+        width: 50px;
+        margin: 7px 0px 0px 2px;
+      }
+      h1 {
+        margin: -33px 18px -4px 64px;
+      }
+      input {
+        margin-left: 122px;
+      }
+      div {
+        width: 500px;
+        height: 1000px;
+      }
+      div {
+        margin: 104px 50px 50px 396px;
+      }
+      input#email {
+        margin-left: 68px;
+      }
+      input#user {
+        margin-left: 89px;
+      }
+      input#pass {
+        margin-left: 100px;
+      }
+      input#cmp {
+        margin-left: 98px;
+      }
+      select#home {
+        margin-left: 109px;
+      }
+      select#time {
+        margin-left: 94px;
+      }
+      button {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header>
+        <!-- <img src="image/number.jpg" /> -->
+        <h1>Set Up Your Account</h1>
+
+        <h5>
+          Make sure to use a valid email address,you will need to verify it
+          before you can send any campaigns
+        </h5>
+      </header>
+      Name <input type="text" id="name" /> <br /><br />
+      Email-address <input type="text" id="email" /><br /><br />
+      User Name <input type="text" id="userName" /><br /><br />
+      Password <input type="text" id="password" /><br /><br />
+      Company <input type="text" id="company" /><br /><br />
+      Country
+      <select name id="country">
+        <option value="1">India</option>
+        <option value="2">USA</option>
+        <option value="3">OTHERS</option> </select
+      ><br /><br />
+      TimeZone
+      <select name id="time">
+        <option value="1">GMT-6:00 Central America</option>
+        <option value="2">Indian Standard Time</option>
+        <option value="3">OTHERS</option>
+      </select>
+      <br />
+      <br />
+      <button onclick="getData()">Get Data</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
