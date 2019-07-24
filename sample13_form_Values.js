@@ -4,7 +4,8 @@ function getData() {
     fname: "",
     lname: "",
     email: "",
-    gender: ""
+    gender: "",
+    roles:[]
   };
   user.fname = document.getElementById("fname").value;
   user.lname = document.getElementById("lname").value;
@@ -39,7 +40,10 @@ function getData() {
 
 function clearForm(obj) {
   for (a in obj) {
-    document.getElementById(a).value = "";
+    if(a !="roles" && a != "gender"){
+      document.getElementById(a).value = "";
+
+    }
   }
 }
 function displayUsers() {
@@ -47,11 +51,24 @@ function displayUsers() {
   for (i = 0; i < users.length; i++) {
     var myTr_ = document.createElement("tr");
     for (a in users[i]) {
+
+      //Capture all the values except roles
       if (a != "roles") {
         var myTd = document.createElement("td");
         myTd.innerHTML = users[i][a];
         myTr_.appendChild(myTd);
+      }else{
+ 
+        var rolesTd = document.createElement("td")
+        var results =""
+        var arrtoLoop = users[i][a]
+        for(j=0;j<arrtoLoop.length;j++){
+          results+=arrtoLoop[j]+"<br>"
+        }
+        rolesTd.innerHTML = results
+        myTr_.appendChild(rolesTd)
       }
+
     }
 
     // var editTd = document.createElement("td");
