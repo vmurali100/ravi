@@ -50,6 +50,7 @@ function displayUsers() {
   document.getElementById("myTable").innerHTML = "";
   for (i = 0; i < users.length; i++) {
     var myTr_ = document.createElement("tr");
+    myTr_.setAttribute("onclick","editUser("+i+")")
     for (a in users[i]) {
 
       //Capture all the values except roles
@@ -87,4 +88,16 @@ function displayUsers() {
 
     document.getElementById("myTable").appendChild(myTr_);
   }
+}
+
+
+function editUser(i){
+  console.log(users[i])
+  for(a in users[i]){
+    document.getElementById(a).value = users[i][a]
+  }
+}
+
+function updateUser(){
+  console.log("updateUser is called")
 }
