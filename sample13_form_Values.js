@@ -18,7 +18,6 @@ function getData() {
     }
   }
 
-  console.log(user);
   // for Checkboxes
 
   var cboxes = document.getElementsByName("role");
@@ -30,12 +29,16 @@ function getData() {
   }
   user.roles = cboxValue;
 
+
+  console.log(user)
+  user.id=null
+  postDataToServer(user)
   //Adding the Object to Array
-  users.push(user);
+  // users.push(user);
 
   //Calling function to display Latest Values
-  displayUsers();
-  clearForm(user);
+  // displayUsers();
+  // clearForm(user);
 }
 
 function clearForm(obj) {
@@ -127,10 +130,21 @@ function updateUser(){
   }
   updatedObj.roles = cboxValue;
 
-  console.log(updatedObj)
 
   users[index] = updatedObj;
   displayUsers()
   clearForm()
 
+}
+
+function postDataToServer(user){
+  var sendData = new XMLHttpRequest;
+  sendData.onreadystatechange = function (){
+    if(sendData.readyState  == 4 && sendData.status == 201){
+      console.log("User added")
+    }
+  }
+  sendData.open("POST","http://localhost:3000/users")
+  sendData.setRequestHeader("Content-type","application/json")
+  sendData.send(JSON.stringify(user))
 }
