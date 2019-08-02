@@ -43,9 +43,19 @@ function getData() {
 
 function clearForm(obj) {
   for (a in obj) {
-    if(a !="roles" && a != "gender"){
+    if(a !="roles" && a != "gender" &&  a != "id"){
       document.getElementById(a).value = "";
-
+    }else if(a == "roles"){
+      var rolevalues = document.getElementsByName("role");
+      for(i=0;i<rolevalues.length;i++){
+        rolevalues[i].checked = false
+      }
+    }
+    else if(a == "gender"){
+      var rbuttons = document.getElementsByName("gender");
+      for(i=0;i<rbuttons.length;i++){
+        rbuttons[i].checked = false
+      }
     }
   }
 }
@@ -97,14 +107,45 @@ function displayUsers() {
 
 function editUser(i){
   index=i;
+  clearForm(users[i])
   // console.log(users[i])
   for(a in users[i]){
-    document.getElementById(a).value = users[i][a]
+    if(a != "gender" && a!= "roles" && a != "id"){
+      document.getElementById(a).value = users[i][a]
+    }else if(a == "gender"){
+      var rbuttons = document.getElementsByName("gender");
+      for(j=0;j<rbuttons.length;j++){
+        if(rbuttons[j].value == users[i][a]){
+          rbuttons[j].checked = true
+        }
+      }
+    
+    }else if(a == "roles"){
+      var rolevalues = document.getElementsByName("role");
+      var serverValue = users[i][a]
+      for(i=0;i<rolevalues.length;i++){
+        for(j=0;j<serverValue.length;j++){
+          if(rolevalues[i].value == serverValue[j]){
+            rolevalues[i].checked = true
+          }
+        }
+      }      
+    }
   }
 }
 
 function deleteUser(i){
-  users.splice(i,1)
+  var sendData = new XMLHttpRequest;
+  sendData.onreadystatechange = function (){
+    if(sendData.readyState  == 4 && sendData.status == 200){
+      console.log("User added")
+      getDatafromServer()
+    }
+  }
+  sendData.open("DELETE","http://localhost:3000/users/"+users[i].id)
+  sendData.setRequestHeader("Content-type","application/json")
+  sendData.send()
+ 
   displayUsers()
 }
 
@@ -130,9 +171,18 @@ function updateUser(){
   }
   updatedObj.roles = cboxValue;
 
-
-  users[index] = updatedObj;
-  displayUsers()
+  var sendData = new XMLHttpRequest;
+  sendData.onreadystatechange = function (){
+    if(sendData.readyState  == 4 && sendData.status == 201){
+      console.log("User added")
+      getDatafromServer()
+    }
+  }
+  sendData.open("PUT","http://localhost:3000/users/"+updatedObj.id)
+  sendData.setRequestHeader("Content-type","application/json")
+  sendData.send(JSON.stringify(updatedObj))
+ 
+  
   clearForm()
 
 }
@@ -142,9 +192,24 @@ function postDataToServer(user){
   sendData.onreadystatechange = function (){
     if(sendData.readyState  == 4 && sendData.status == 201){
       console.log("User added")
+      getDatafromServer()
     }
   }
   sendData.open("POST","http://localhost:3000/users")
   sendData.setRequestHeader("Content-type","application/json")
   sendData.send(JSON.stringify(user))
+}
+
+function getDatafromServer(){
+  var sendData = new XMLHttpRequest;
+  sendData.onreadystatechange = function (){
+    if(sendData.readyState  == 4 && sendData.status == 200){
+      users = JSON.parse(sendData.response)
+      console.log(users)
+      displayUsers()
+    }
+  }
+  sendData.open("GET","http://localhost:3000/users")
+  sendData.send()
+
 }
