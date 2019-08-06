@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="stopInterval()">Stop</button>
+    <script>
+      //   setTimeout(function() {
+      //     console.log("I will come After 2 seconds");
+      //   }, 4000);
+
+      var inter = setInterval(function() {
+        console.log("I will come Every 2 Seconds ");
+      }, 2000);
+
+      function stopInterval() {
+        clearInterval(inter);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="images/1.jpg"
+      alt=""
+      style="width: 500px;height: 400px;"
+      id="myImage"
+    />
+    <script>
+      var i = 1;
+      function changeImage() {
+        document
+          .getElementById("myImage")
+          .setAttribute("src", "images/" + i + ".jpg");
+        i++;
+        if (i == 6) {
+          i = 1;
+        }
+      }
+
+      function startSliding() {
+        imgInt = setInterval(function() {
+          changeImage();
+        }, 1000);
+      }
+      startSliding();
+
+      document.getElementById("myImage").onmouseover = function() {
+        clearInterval(imgInt);
+      };
+
+      document.getElementById("myImage").onmouseout = function() {
+        startSliding();
+      };
+    </script>
+  </body>
+</html>

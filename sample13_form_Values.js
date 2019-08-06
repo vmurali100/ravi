@@ -54,19 +54,19 @@ function displayUsers() {
       }
     }
 
-    // var editTd = document.createElement("td");
-    // var deleteTd = document.createElement("td");
+    var editTd = document.createElement("td");
+    var deleteTd = document.createElement("td");
 
-    // var editBtn = document.createElement("button");
-    // editBtn.innerHTML = "Edit";
-    // var deleteBtn = document.createElement("button");
-    // deleteBtn.innerHTML = "Delete";
+    var editBtn = document.createElement("button");
+    editBtn.innerHTML = "Edit";
+    var deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "Delete";
 
-    // editTd.appendChild(editBtn);
-    // myTr_.appendChild(editTd);
+    editTd.appendChild(editBtn);
+    myTr_.appendChild(editTd);
 
-    // deleteTd.appendChild(deleteBtn);
-    // myTr_.appendChild(deleteTd);
+    deleteTd.appendChild(deleteBtn);
+    myTr_.appendChild(deleteTd);
 
     document.getElementById("myTable").appendChild(myTr_);
   }
