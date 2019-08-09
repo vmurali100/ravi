@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                 
+                </tbody>
+              </table>
+              <script src="data.js"></script>
+              <script>
+                  function displayUsers(){
+                      for(i=0;i<data.length;i++){
+                          var tr = document.createElement("tr")
+                          for(a in data[i]){
+                              var td = document.createElement("td")
+                              td.innerHTML = data[i][a]
+                              tr.appendChild(td)
+                          }
+
+                          var editTd = document.createElement("td")
+                          var editBtn = document.createElement("button")
+                          var annchor = document.createElement("a")
+                          annchor.innerHTML = "Edit";
+                          annchor.setAttribute("href","edit.html?="+i)
+                          editBtn.appendChild(annchor)
+                          editTd.appendChild(editBtn)
+                          tr.appendChild(editTd)
+                          document.getElementById("myTable").appendChild(tr)
+                      }
+                  }
+                  displayUsers()
+              </script>
+</body>
+</html>

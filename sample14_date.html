@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    h2#clock {
+    background: green;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}</style>
+</head>
+<body>
+    <h2 id="clock"></h2>
+    <script>
+        function showTime(){
+            var todaysDate = new Date();
+
+            document.getElementById('clock').innerHTML = todaysDate.toLocaleTimeString()
+        }
+        showTime()
+        setInterval(function (){
+            showTime()
+
+        },1000)
+    </script>
+</body>
+</html>
