@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="Quesion"></h1>
+      <ul>
+        <li class="answer"></li>
+        <li class="answer"></li>
+        <li class="answer"></li>
+        <li class="answer"></li>
+      </ul>
+    </div>
+    <script>
+      var NumArray = [];
+      var correctAnswers = [];
+      var qNo = 0;
+      var score = 0;
+      var questions = [
+        {
+          quesion: "Quesion No 1",
+          answers: ["A", "B", "C", "D"],
+          correct: "2"
+        },
+        {
+          quesion: "Quesion No 2",
+          answers: ["A", "B", "C", "D"],
+          correct: "1"
+        },
+        {
+          quesion: "Quesion No 3",
+          answers: ["A", "B", "C", "D"],
+          correct: "0"
+        },
+        {
+          quesion: "Quesion No 4",
+          answers: ["A", "B", "C", "D"],
+          correct: "2"
+        },
+        {
+          quesion: "Quesion No 5",
+          answers: ["A", "B", "C", "D"],
+          correct: "3"
+        },
+        {
+          quesion: "Quesion No 6",
+          answers: ["A", "B", "C", "D"],
+          correct: "1"
+        },
+        {
+          quesion: "Quesion No 7",
+          answers: ["A", "B", "C", "D"],
+          correct: "2"
+        },
+        {
+          quesion: "Quesion No 8",
+          answers: ["A", "B", "C", "D"],
+          correct: "1"
+        },
+        {
+          quesion: "Quesion No 9",
+          answers: ["A", "B", "C", "D"],
+          correct: "0"
+        },
+        {
+          quesion: "Quesion No 10",
+          answers: ["A", "B", "C", "D"],
+          correct: "2"
+        }
+      ];
+      function createRandomNumbers() {
+        var rNum = Math.ceil(Math.random() * 11);
+        console.log(rNum);
+        if (NumArray.length < 10) {
+          if (NumArray.indexOf(rNum) == -1) {
+            NumArray.push(rNum);
+            createRandomNumbers();
+          } else {
+            createRandomNumbers();
+          }
+        }
+      }
+      createRandomNumbers();
+
+      function askQuestions(i) {
+        var que = questions[i];
+        document.getElementById("Quesion").innerHTML = que.quesion;
+        var answerList = document.getElementsByClassName("answer");
+        for (i = 0; i < answerList.length; i++) {
+          answerList[i].innerHTML = que.answers[i];
+          var an = que.answers[i];
+          answerList[i].setAttribute("onclick", "checkAnswer(" + i + ")");
+        }
+      }
+      askQuestions(qNo);
+
+      function checkAnswer(ans) {
+        correctAnswers.push(ans);
+        if (qNo < 9) {
+          askQuestions(qNo);
+          qNo++;
+        } else {
+          alert("Hello Quiz Completed");
+          console.log(correctAnswers);
+          showResults();
+        }
+      }
+
+      function showResults() {
+        for (i = 0; i < 10; i++) {
+          if (correctAnswers[i] == questions[i].correct) {
+            score = score + 1;
+          }
+        }
+        alert("Congratulations You Scored :" + score);
+      }
+    </script>
+  </body>
+</html>
