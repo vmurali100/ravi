@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // literal Way Of Creating Object
+        var obj = {}
+        obj.fullName=function (){
+
+        }
+
+        //Constrctor function (OPP)
+        function Person (fname,lname){
+            this.fname = fname
+            this.lname=lname
+        }
+
+Person.prototype.fullName = function (){
+    return this.fname+" "+this.lname
+}
+        var person1= new Person("Murali","Krishna")
+        var person2= new Person("Ravi","Teja")
+
+        console.log(obj)
+        console.log(person1)
+        console.log(person2)
+
+        // ES6 Classes
+
+        class User{
+            constructor(fname,lname){
+                this.fname = fname
+                this.lname = lname
+            }
+        }
+
+        User.prototype.fullName = function (){
+            return this.fname +" "+this.lname
+        }
+        var user1=new User("Ram","Kumar");
+        var user2=new User("Ram","Reddy")
+
+
+        console.log(user1)
+        console.log(user2)
+
+    </script>
+</body>
+</html>
