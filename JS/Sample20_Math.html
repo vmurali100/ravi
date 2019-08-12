@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      setInterval(function() {
+        var Rnumber = Math.random() * 10;
+        var RoundNumber = Math.round(Rnumber);
+        var FlorNumber = Math.floor(Rnumber);
+        var ceilNumber = Math.ceil(Rnumber);
+        console.log(Rnumber);
+        console.log(RoundNumber);
+        console.log("Floor Number" + FlorNumber);
+        console.log("Ceil Number" + ceilNumber);
+      }, 3000);
+    </script>
+  </body>
+</html>
