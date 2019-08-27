@@ -1,0 +1,18 @@
+<p>child works!</p>
+{{ receivedDetails }} <br />
+<br />
+<div>
+  <p *ngFor="let studentDetails of studentObjectKeys">
+    {{ studentObject[studentDetails] }}
+  </p>
+</div>
+
+<div>
+  <p *ngFor="let obj of carDetails">
+    <strong>Car Model :{{ obj.companyName }}</strong> <br />
+    <strong> Car Name :{{ obj.carname }}</strong> <br />
+    <strong> Engine Capacity :{{ obj.engine }}</strong> <br />
+    <strong> Seeter :{{ obj.seetar }}</strong> <br />
+    <strong> car Price :{{ obj.price }}</strong>
+  </p>
+</div>

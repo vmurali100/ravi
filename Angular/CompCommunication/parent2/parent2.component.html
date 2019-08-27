@@ -1,0 +1,5 @@
+<p>parent2 works!</p>
+<h4>Message Received From Child is : {{ anyvariable }}</h4>
+<hr />
+<!-- Step 4 :Using event emitter variable and Triggering an event from ParentComponent -->
+<app-child2 (sendData)="receveDataFromChild($event)"></app-child2>
