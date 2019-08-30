@@ -1,0 +1,21 @@
+<p>user works!</p>
+<form #reviForm="ngForm">
+  <input
+    type="text"
+    name="firstName"
+    [(ngModel)]="userDetails.firstName"
+  /><br />
+  <input type="text" name="lastName" [(ngModel)]="userDetails.lastName" />
+  <button type="submit" (click)="addUser(reviForm)">Add User</button>
+  <button (click)="updateUser(reviForm)">Update</button>
+</form>
+
+<hr />
+
+<ul *ngFor="let user of users">
+  <li>
+    {{ user.firstName }} - {{ user.lastName }}
+    <span (click)="deleteUser(user)">X</span>
+    <button (click)="editUser(user)">Edit</button>
+  </li>
+</ul>
